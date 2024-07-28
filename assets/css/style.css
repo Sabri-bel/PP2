@@ -65,3 +65,30 @@ button {
   margin-top: 4rem;
   font-size: 150%;
 }
+
+
+@media screen and (min-width: 768px) {
+
+  #game-area {
+    height: 33vh;
+  }
+
+  #game-card {
+    justify-content: space-evenly;
+  }
+
+  button {
+    margin-left: 37%;
+  }
+}
+
+
+@media screen and  (min-width: 992px) {
+
+}
+
+
+@media screen and (min-width: 1200px) {
+
+
+}
