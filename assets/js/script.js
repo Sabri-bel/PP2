@@ -26,11 +26,20 @@ function runGame() {
     let randomImg2 = Math.floor(Math.random() * 3);
     let randomImg3 = Math.floor(Math.random() * 3);
 
-    renderCard(card1, randomImg1Index);
-    renderCard(card2, randomImg2Index);
-    renderCard(card3, randomImg3Index);
+    renderCard(card1, randomImg1);
+    renderCard(card2, randomImg2);
+    renderCard(card3, randomImg3);
 
-    scoreCalculator()
+    if (randomImg1 === randomImg2 && randomImg2 === randomImg3)  {
+        scoreCalculatorAll()
+    }
+    else if (randomImg1 === randomImg2 || randomImg1 === randomImg3) {
+        scoreCalculatorSome()
+    }
+    else if (randomImg2 === randomImg3) {
+        scoreCalculatorSome()
+    }
+
 }
 
 function renderCard(card, choiceIndex) {
@@ -41,9 +50,14 @@ function renderCard(card, choiceIndex) {
 
 /**this fucntion calculate the final score of the customer  */
 
-function scoreCalculator() {
-    let playScore = document.getElementById("user-score").innerText;
-    
+function scoreCalculatorAll() {
+    let playScore = parseInt(document.getElementById("user-score").innerText);
+   document.getElementById("user-score").innerText = playScore + 10;
+}
+
+function scoreCalculatorSome() {
+    let playScore = parseInt(document.getElementById("user-score").innerText);
+    document.getElementById("user-score").innerText = playScore + 5;
 }
 
 function showInstruction() {
