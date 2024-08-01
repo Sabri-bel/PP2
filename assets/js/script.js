@@ -1,7 +1,11 @@
 
 /*retrieve information from the DOM */
-let button = document.getElementById("start-button");
-let choices = ["heart-eyes", "horse", "worried_"];
+const button = document.getElementById("start-button");
+const card1 = document.getElementById("card1");
+const card2 = document.getElementById("card2");
+const card3 = document.getElementById("card3");
+const imageLocation = "assets/images/"
+const choices = ["heart-eyes", "horse", "worried_"];
 
 /* add event listener */
 
@@ -22,15 +26,17 @@ function runGame() {
     let randomImg2 = Math.floor(Math.random() * 3);
     let randomImg3 = Math.floor(Math.random() * 3);
 
-    document.getElementById("card1").src = `assets/images/${choices[randomImg1]}.png`;
-    document.getElementById("card1").alt = choices[randomImg1];
-    document.getElementById("card2").src = `assets/images/${choices[randomImg2]}.png`;
-    document.getElementById("card2").alt = choices[randomImg2];
-    document.getElementById("card3").src = `assets/images/${choices[randomImg3]}.png`;
-    document.getElementById("card3").alt = choices[randomImg3];
+    renderCard(card1, randomImg1Index);
+    renderCard(card2, randomImg2Index);
+    renderCard(card3, randomImg3Index);
+
     scoreCalculator()
 }
 
+function renderCard(card, choiceIndex) {
+    card.src = `${imageLocation}${choices[choiceIndex]}.png`;
+    card.alt = choices[choiceIndex];
+}
 /* add score-calculation function */
 
 /**this fucntion calculate the final score of the customer  */
@@ -38,4 +44,9 @@ function runGame() {
 function scoreCalculator() {
     let playScore = document.getElementById("user-score").innerText;
     
+}
+
+function showInstruction() {
+    const instructionDiv = document.createElement('div')
+
 }
