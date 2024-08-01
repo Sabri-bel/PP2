@@ -65,6 +65,7 @@ function renderCard(card, choiceIndex) {
 
 function scoreCalculatorAll() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
+
    document.getElementById("user-score").innerText = playScore + 10;
 }
 
@@ -73,11 +74,13 @@ function scoreCalculatorAll() {
  */
 function scoreCalculatorSome() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
+
     document.getElementById("user-score").innerText = playScore + 5;
 }
 
 function scoreReset() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
+
     document.getElementById("user-score").innerText = 0;
 }
 

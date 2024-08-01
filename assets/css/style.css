@@ -67,14 +67,15 @@ button {
 
 /*gamerule section*/
 #show-score {
-  background-color: aliceblue;
   width: 85%;
   height: 3rem;
   margin-left: auto;
   margin-right: auto;
   margin-top: 4rem;
-  font-size: 150%;
+  font-size: 250%;
+  text-align: center;
 }
+
 
 /*media screen adjustments*/
 @media screen and (min-width: 768px) {
