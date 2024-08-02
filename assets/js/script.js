@@ -7,10 +7,10 @@ const card3 = document.getElementById("card3");
 const imageLocation = "assets/images/"
 const choices = ["heart-eyes", "horse", "worried_"];
 
-/* add event listener */
+/* add event listeners */
 
 /** this listener will wait until the DOM is fully loaded and activate another
- * listener for activate the game button
+ * first listener for activate the game button with click and second for enter key
  */
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
             runGame();
         }
     })
+
+
 /* add rungame function*/
 
 /** this function will create a random number between 1 and 3 and use it 
- * for generate the images. it will modify the alt information as well
+ * for generate the images and score
  */
 
 function runGame() {
@@ -75,20 +77,24 @@ function scoreCalculatorAll() {
    document.getElementById("user-score").innerText = playScore + 10;
 }
 
-/** this function will calculate and update the score of the user if the user is getting
- * only 2 images out of 3
+/*
+  this function will calculate and update the score of the user if the user is getting
+  only 2 images out of 3
  */
+
 function scoreCalculatorSome() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
 
     document.getElementById("user-score").innerText = playScore + 5;
 }
 
+/*reset the score when all images are different */
 function scoreReset() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
 
     document.getElementById("user-score").innerText = 0;
 }
+
 
 function showInstruction() {
     const instructionDiv = document.createElement('div')
