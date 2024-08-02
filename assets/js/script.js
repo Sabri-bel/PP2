@@ -17,7 +17,12 @@ document.addEventListener("DOMContentLoaded", function() {
     button.addEventListener("click", runGame)
 })
 
-
+/*use the enter key for staring the game instead of click*/
+ document.getElementById("start-button").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            runGame();
+        }
+    })
 /* add rungame function*/
 
 /** this function will create a random number between 1 and 3 and use it 
@@ -45,6 +50,7 @@ function runGame() {
     else {
         scoreReset();
     }
+
 
 }
 
@@ -88,3 +94,4 @@ function showInstruction() {
     const instructionDiv = document.createElement('div')
 
 }
+

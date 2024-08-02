@@ -53,6 +53,8 @@ button {
   font-family: inherit;
   font-size: 150%;
   border-style: outset;
+  border-radius: 50%;
+  background-color: rgba(104, 63, 105, 0.5);
 }
 
 /*results area*/
