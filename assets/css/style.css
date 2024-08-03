@@ -61,10 +61,10 @@ button {
 #game-results {
   background-color: rgba(104, 63, 105, 0.6);
   width: 85%;
-  height: 10rem;
+  height: 15rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
 }
 
 /*gamerule section*/
@@ -73,7 +73,7 @@ button {
   height: 3rem;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 4rem;
+  margin-top: 2rem;
   font-size: 250%;
   text-align: center;
 }

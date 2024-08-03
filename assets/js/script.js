@@ -75,7 +75,7 @@ function scoreCalculatorAll() {
 
    document.getElementById("user-score").innerText = playScore + 10;
    if (playScore >= 30) {
-    showInstruction()
+    showWins()
    }
 }
 
@@ -89,7 +89,7 @@ function scoreCalculatorSome() {
 
     document.getElementById("user-score").innerText = playScore + 5;
     if (playScore >= 30) {
-        showInstruction()
+        showWins()
        }
 }
 
@@ -102,10 +102,11 @@ function scoreReset() {
 }
 
 
-function showInstruction() {
+function showWins() {
     // Create element:
 const para = document.createElement("span");
-para.innerHTML = "This is a paragraph.";
+para.setAttribute("id","win")
+para.innerHTML = `<i class="fa-solid fa-star"></i>`;
 
 // Append to another element:
 document.getElementById("star").appendChild(para);
@@ -115,8 +116,10 @@ document.getElementById("star").appendChild(para);
 function showTryAgain() {
         // Create element:
 const para = document.createElement("span");
-para.innerHTML = "This is a paragraph.";
+para.setAttribute("id", "lose")
+para.innerHTML = `<i class="fa-solid fa-skull"></i>`;
 
 // Append to another element:
 document.getElementById("star").appendChild(para);
+
 }
