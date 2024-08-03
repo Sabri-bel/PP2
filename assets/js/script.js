@@ -53,7 +53,6 @@ function runGame() {
         scoreReset();
     }
 
-
 }
 
 /** this function modify the img src and alt structure based on the random images
@@ -75,6 +74,9 @@ function scoreCalculatorAll() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
 
    document.getElementById("user-score").innerText = playScore + 10;
+   if (playScore >= 30) {
+    showInstruction()
+   }
 }
 
 /*
@@ -86,6 +88,9 @@ function scoreCalculatorSome() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
 
     document.getElementById("user-score").innerText = playScore + 5;
+    if (playScore >= 30) {
+        showInstruction()
+       }
 }
 
 /*reset the score when all images are different */
@@ -93,11 +98,25 @@ function scoreReset() {
     let playScore = parseInt(document.getElementById("user-score").innerText);
 
     document.getElementById("user-score").innerText = 0;
+    showTryAgain()
 }
 
 
 function showInstruction() {
-    const instructionDiv = document.createElement('div')
+    // Create element:
+const para = document.createElement("span");
+para.innerHTML = "This is a paragraph.";
 
+// Append to another element:
+document.getElementById("star").appendChild(para);
+   
 }
 
+function showTryAgain() {
+        // Create element:
+const para = document.createElement("span");
+para.innerHTML = "This is a paragraph.";
+
+// Append to another element:
+document.getElementById("star").appendChild(para);
+}
