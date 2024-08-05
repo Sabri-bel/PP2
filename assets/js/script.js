@@ -5,14 +5,17 @@ const button = document.getElementById("start-button");
 const card1 = document.getElementById("card1");
 const card2 = document.getElementById("card2");
 const card3 = document.getElementById("card3");
+const userScoreDisplay = document.getElementById("user-score");
+const star = document.getElementById("star");
+
 
 /*const used for assign the image as random image */
 
-const imageLocation = "assets/images/"
+const imageLocation = "assets/images/";
 const choices = ["heart-eyes", "horse", "worried_"];
 
 
-let playScore = parseInt(document.getElementById("user-score").innerText);
+let playScore = 0;
 
 
 /* add event listeners */
@@ -101,8 +104,8 @@ function scoreCalculatorAll() {
  */
 
 function scoreCalculatorSome() {
-
-    document.getElementById("user-score").innerText = playScore += 5;
+    playScore += 5;
+    userScoreDisplay.innerText = playScore;
     if (playScore >= 30) {
         showWins()
        }
@@ -111,8 +114,8 @@ function scoreCalculatorSome() {
 /* this function reset the score when all images are different */
 
 function scoreReset() {
-
-    document.getElementById("user-score").innerText = 0;
+    playScore = 0
+    userScoreDisplay.innerText = playScore;
     showTryAgain()
 }
 
@@ -125,7 +128,7 @@ para.setAttribute("id","win")
 para.innerHTML = `<i class="fa-solid fa-star"></i> Your highest score is ${playScore}`;
 
 // Append to another existing element:
-document.getElementById("star").appendChild(para);
+star.appendChild(para);
    
 }
 
@@ -137,7 +140,7 @@ para.setAttribute("id", "lose")
 para.innerHTML = `<i class="fa-solid fa-skull"></i> Oh no! You lose`;
 
 // Append to another existing DOM element:
-document.getElementById("star").appendChild(para);
+star.appendChild(para);
 
 const button = document.createElement("button");
 button.setAttribute("id", "restart-game")
@@ -150,6 +153,7 @@ function results() {
     let result = document.createElement("div");
     result.setAttribute("class", "final-results");
     result.innerHTML = "Congratulation! Jackpot!";
-    document.getElementById("star").appendChild(result)
+    star.innerHTML = ""
+    star.appendChild(result)
 }
 
