@@ -11,8 +11,7 @@ const card3 = document.getElementById("card3");
 const imageLocation = "assets/images/"
 const choices = ["heart-eyes", "horse", "worried_"];
 
-let userWin = 0
-let userLose = 0
+
 let playScore = parseInt(document.getElementById("user-score").innerText);
 
 
@@ -51,21 +50,26 @@ function runGame() {
     renderCard(card2, randomImg2);
     renderCard(card3, randomImg3);
 
+    /* jackpot score */
     if (randomImg1 === randomImg2 && randomImg2 === randomImg3)  {
         scoreCalculatorAll();
-        userWin += 1
+       
     }
+
+    /*accumulate point to reach 30*/
     else if (randomImg1 === randomImg2 || randomImg1 === randomImg3) {
         scoreCalculatorSome();
-        userWin += 1
+        
     }
     else if (randomImg2 === randomImg3) {
         scoreCalculatorSome();
-        userWin += 1
+    
     }
+
+    /* reset point */
     else {
         scoreReset();
-        userLose += 1
+    
     }
 
 }
@@ -87,12 +91,9 @@ function renderCard(card, choiceIndex) {
  */
 
 function scoreCalculatorAll() {
-
-   document.getElementById("user-score").innerText = playScore + 10;
-   if (playScore >= 30) {
-    showWins()
+    results()
    }
-}
+
 
 /*
   this function will calculate and update the score of the user if the user is getting
@@ -100,9 +101,8 @@ function scoreCalculatorAll() {
  */
 
 function scoreCalculatorSome() {
-    /*let playScore = parseInt(document.getElementById("user-score").innerText);*/
 
-    document.getElementById("user-score").innerText = playScore + 5;
+    document.getElementById("user-score").innerText = playScore += 5;
     if (playScore >= 30) {
         showWins()
        }
@@ -111,7 +111,6 @@ function scoreCalculatorSome() {
 /* this function reset the score when all images are different */
 
 function scoreReset() {
-    /*let playScore = parseInt(document.getElementById("user-score").innerText);*/
 
     document.getElementById("user-score").innerText = 0;
     showTryAgain()
@@ -121,9 +120,9 @@ function scoreReset() {
 /* functions below add some icons in the DOM based on the results */
 
 function showWins() {
-const para = document.createElement("span");
+const para = document.createElement("p");
 para.setAttribute("id","win")
-para.innerHTML = `<i class="fa-solid fa-star"></i>`;
+para.innerHTML = `<i class="fa-solid fa-star"></i> Your highest score is ${playScore}`;
 
 // Append to another existing element:
 document.getElementById("star").appendChild(para);
@@ -133,18 +132,24 @@ document.getElementById("star").appendChild(para);
 
 function showTryAgain() {
 
-const para = document.createElement("span");
+const para = document.createElement("p");
 para.setAttribute("id", "lose")
-para.innerHTML = `<i class="fa-solid fa-skull"></i>`;
+para.innerHTML = `<i class="fa-solid fa-skull"></i> Oh no! You lose`;
 
 // Append to another existing DOM element:
 document.getElementById("star").appendChild(para);
+
+const button = document.createElement("button");
+button.setAttribute("id", "restart-game")
+button.innerHTML = "try again"
+document.getElementById("star").appendChild(button)
+
 }
 
 function results() {
     let result = document.createElement("div");
     result.setAttribute("class", "final-results");
-    result.innerHTML = `Your final score is ${playScore}`;
-    document.getElementById("game-results").insertBefore(result)
+    result.innerHTML = "Congratulation! Jackpot!";
+    document.getElementById("star").appendChild(result)
 }
 

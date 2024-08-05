@@ -95,3 +95,15 @@ button {
   }
 }
 
+@media screen and  (min-width: 992px) {
+  
+#game-area {
+  padding: 5%
+}
+
+#game-results {
+  padding: 2em;
+  font-size: 130%;
+
+}
+}
