@@ -126,7 +126,7 @@ function showWins() {
 const para = document.createElement("p");
 para.setAttribute("id","win")
 para.innerHTML = `<i class="fa-solid fa-star"></i> Your highest score is ${playScore}`;
-
+star.innerHTML = ""
 // Append to another existing element:
 star.appendChild(para);
    
@@ -138,14 +138,15 @@ function showTryAgain() {
 const para = document.createElement("p");
 para.setAttribute("id", "lose")
 para.innerHTML = `<i class="fa-solid fa-skull"></i> Oh no! You lose`;
-
+star.innerHTML = ""
 // Append to another existing DOM element:
 star.appendChild(para);
 
 const button = document.createElement("button");
 button.setAttribute("id", "restart-game")
 button.innerHTML = "try again"
-document.getElementById("star").appendChild(button)
+
+star.appendChild(button)
 
 }
 
