@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 /*general style*/
+html {
+  position: relative;
+}
+
 body {
   font-family: "Indie Flower", sans-serif;
   font-weight: 400;
@@ -43,6 +47,19 @@ h1 {
   height: 4rem;
   padding: 1em;
   
+}
+.hidden {
+  display: none !important;
+}
+
+#star {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(104, 63, 105, 0.5);
 }
 
 /*button area*/
