@@ -52,7 +52,7 @@ h1 {
   display: none !important;
 }
 
-#star {
+#lose-win {
   position: absolute;
   top: 0;
   left: 0;
@@ -75,7 +75,7 @@ button {
 }
 
 /*results area*/
-#game-results {
+#game-rules {
   background-color: rgba(104, 63, 105, 0.6);
   width: 85%;
   height: 15rem;
@@ -118,7 +118,7 @@ button {
   padding: 5%
 }
 
-#game-results {
+#game-rules {
   padding: 2em;
   font-size: 130%;
 

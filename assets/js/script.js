@@ -6,7 +6,7 @@ const card1 = document.getElementById("card1");
 const card2 = document.getElementById("card2");
 const card3 = document.getElementById("card3");
 const userScoreDisplay = document.getElementById("user-score");
-const star = document.getElementById("star");
+const loseWin = document.getElementById("lose-win");
 
 
 /*const used for assign the image as random image */
@@ -126,32 +126,32 @@ function showWins() {
     const para = document.createElement("p");
     para.setAttribute("id","win")
     para.innerHTML = `<i class="fa-solid fa-star"></i> Your highest score is ${playScore}`;
-    star.innerHTML = ""
+    loseWin.innerHTML = ""
     // Append to another existing element:
-    star.appendChild(para);
+    loseWin.appendChild(para);
    
 }
 
 
 function showTryAgain() {
     playScore = 0;
-    star.classList.remove("hidden");
+    loseWin.classList.remove("hidden");
     const para = document.createElement("p");
     para.setAttribute("id", "lose");
     para.innerHTML = `<i class="fa-solid fa-skull"></i> Oh no! You lose`;
-    star.innerHTML = ""
+    loseWin.innerHTML = ""
     // Append to another existing DOM element:
-    star.appendChild(para);
+    loseWin.appendChild(para);
 
     const button = document.createElement("button");
     button.setAttribute("id", "restart-game");
     button.innerHTML = "try again"
     button.addEventListener("click", function() {
-        star.classList.add("hidden")
+        loseWin.classList.add("hidden")
         runGame()
     })
 
-star.appendChild(button)
+loseWin.appendChild(button)
 
 }
 
@@ -159,7 +159,7 @@ function results() {
     let result = document.createElement("div");
     result.setAttribute("class", "final-results");
     result.innerHTML = "Congratulation! Jackpot!";
-    star.innerHTML = ""
-    star.appendChild(result)
+    loseWin.innerHTML = ""
+    loseWin.appendChild(result)
 }
 
