@@ -1,4 +1,9 @@
+
+/*google font imported*/
+
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
 /*general style*/
 
 html {
@@ -10,14 +15,16 @@ body {
   font-weight: 400;
   font-style: normal;
   background: url(../images/emoji-background.jpg) no-repeat center center/cover;
-  height: 90vh;
+  height: 95vh;
   }
+
 h1 {
   font-size: 250%;
   text-align: center;
 }
 
 /*interactive game area*/
+
 #game-area {
     border-color: black;
     background-image: linear-gradient(rgb(124, 55, 141), rgb(231, 231, 164));
@@ -34,7 +41,8 @@ h1 {
    
 }
 
-/*card section only*/
+/*card section area only*/
+
 #game-card {
   display: flex;
   flex-wrap: wrap;
@@ -49,12 +57,54 @@ h1 {
 
 }
 
+ /*style for each card*/
+
 .game-symbol {
   width: 4rem;
   height: 4rem;
   padding: 1em;
   
 }
+
+
+/*play button area*/
+
+button {
+  padding: 1rem;
+  margin-top: 4rem;
+  margin-left: 24%;
+  font-family: inherit;
+  font-size: 150%;
+  border-style: outset;
+  border-radius: 50%;
+  background-color: rgba(104, 63, 105, 0.5);
+}
+
+/*game rules section*/
+
+#game-rules {
+  background-color: rgba(104, 63, 105, 0.7);
+  width: 85%;
+  height: 15rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+}
+
+/*score section*/
+
+#show-score {
+  width: 85%;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2rem;
+  font-size: 250%;
+  text-align: center;
+}
+
+/*banner style for the results*/
+
 .hidden {
   display: none !important;
 }
@@ -97,47 +147,33 @@ h1 {
 
 }
 
+/*button for restart the game inside the banner*/
+
 #restart-game {
   padding: 1.5em;
   margin-right: auto;
   background-color: rgb(104,63,105);
 }
 
-/*play button area*/
-button {
-  padding: 1rem;
-  margin-top: 4rem;
-  margin-left: 24%;
-  font-family: inherit;
-  font-size: 150%;
-  border-style: outset;
-  border-radius: 50%;
-  background-color: rgba(104, 63, 105, 0.5);
-}
-
-/*results area*/
-#game-rules {
-  background-color: rgba(104, 63, 105, 0.7);
-  width: 85%;
-  height: 15rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-}
-
-/*gamerule section*/
-#show-score {
-  width: 85%;
-  height: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 2rem;
-  font-size: 250%;
-  text-align: center;
-}
-
 
 /*media screen adjustments*/
+
+@media (max-width: 320px) {
+  body {
+    height: 107vh;
+  }
+  #game-area {
+     width: 100%;
+     padding: 0;
+     height: 55vh;
+  }
+  #show-score {
+    font-size: 150%;
+  }
+  button {
+    margin-top: 0;
+  }
+}
 @media screen and (min-width: 768px) {
 
   #game-area {
@@ -167,5 +203,6 @@ button {
 }
 #lose-win {
   left: 3em;
+  top: 23em;
 }
 }
