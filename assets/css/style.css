@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 /*general style*/
+
 html {
   position: relative;
 }
@@ -9,8 +10,8 @@ body {
   font-weight: 400;
   font-style: normal;
   background: url(../images/emoji-background.jpg) no-repeat center center/cover;
-  /*background-image: linear-gradient(to bottom right, rgb(124, 55, 141), rgb(231, 231, 164));*/
-}
+  height: 90vh;
+  }
 h1 {
   font-size: 250%;
   text-align: center;
@@ -116,7 +117,7 @@ button {
 
 /*results area*/
 #game-rules {
-  background-color: rgba(104, 63, 105, 0.6);
+  background-color: rgba(104, 63, 105, 0.7);
   width: 85%;
   height: 15rem;
   margin-left: auto;
@@ -149,6 +150,7 @@ button {
 
   button {
     margin-left: 37%;
+    margin-top: 3rem;
   }
 }
 
