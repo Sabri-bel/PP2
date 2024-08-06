@@ -53,16 +53,47 @@ h1 {
 }
 
 #lose-win {
-  position: absolute;
-  top: 0;
-  left: 0;
+ position: absolute;
+  top: 5em;
+  left: 1em;
   z-index: 99;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(104, 63, 105, 0.5);
+  width: 90vw;
+  height: 57vh;
+  background: rgba(104, 63, 105, 0.9);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-color: black;
+  border-style: solid;
 }
 
-/*button area*/
+.final-results {
+  font-size: 200%;
+  background-color: violet;
+  padding: 1em;
+}
+
+#lose {
+  font-size: 200%;
+  background-color: violet;
+  padding: 1em;
+}
+
+#win {
+  font-size: 200%;
+  background-color: violet;
+  padding: 1em;
+}
+
+#restart-game {
+  padding: 1.5em;
+  margin-right: auto;
+  background-color: rgb(104,63,105);
+}
+
+/*play button area*/
 button {
   padding: 1rem;
   margin-top: 4rem;

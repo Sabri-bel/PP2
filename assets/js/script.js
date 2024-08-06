@@ -123,15 +123,25 @@ function scoreReset() {
 /* functions below add some icons in the DOM based on the results */
 
 function showWins() {
+    loseWin.classList.remove("hidden");
     const para = document.createElement("p");
     para.setAttribute("id","win")
     para.innerHTML = `<i class="fa-solid fa-star"></i> Your highest score is ${playScore}`;
     loseWin.innerHTML = ""
     // Append to another existing element:
     loseWin.appendChild(para);
-   
-}
+    tryAgainBtn()
+    // create a try again button to restart game 
+    /*const button = document.createElement("button");
+    button.setAttribute("id", "restart-game");
+    button.innerHTML = "play again"
+    button.addEventListener("click", function() {
+        loseWin.classList.add("hidden")
+        runGame()
+    })
+    loseWin.appendChild(button)*/
 
+}
 
 function showTryAgain() {
     playScore = 0;
@@ -142,7 +152,36 @@ function showTryAgain() {
     loseWin.innerHTML = ""
     // Append to another existing DOM element:
     loseWin.appendChild(para);
+    tryAgainBtn()
 
+    //create a  try again button to restart game
+    /*const button = document.createElement("button");
+    button.setAttribute("id", "restart-game");
+    button.innerHTML = "try again"
+    button.addEventListener("click", function() {
+        loseWin.classList.add("hidden")
+        runGame()
+    })
+
+    loseWin.appendChild(button)*/
+
+}
+
+function results() {
+    playScore = ""
+    loseWin.classList.remove("hidden");
+
+    let result = document.createElement("div");
+    result.setAttribute("class", "final-results");
+    result.innerHTML = "Congratulation! Jackpot!";
+    loseWin.innerHTML = ""
+    loseWin.appendChild(result)
+    tryAgainBtn()
+}
+
+
+function tryAgainBtn() {
+    playScore = 0
     const button = document.createElement("button");
     button.setAttribute("id", "restart-game");
     button.innerHTML = "try again"
@@ -151,15 +190,5 @@ function showTryAgain() {
         runGame()
     })
 
-loseWin.appendChild(button)
-
+    loseWin.appendChild(button)
 }
-
-function results() {
-    let result = document.createElement("div");
-    result.setAttribute("class", "final-results");
-    result.innerHTML = "Congratulation! Jackpot!";
-    loseWin.innerHTML = ""
-    loseWin.appendChild(result)
-}
-
