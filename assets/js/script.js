@@ -20,8 +20,8 @@ let playScore = 0;
 
 /* add event listeners */
 
-/* listener n.1 will wait until the DOM is fully loaded. It activate another
-   listener n.2 for the actual game button using the mouse click
+/* listener n.1 will wait until the DOM is fully loaded. inside there is another listerer
+    listener n.2 for the actual game button using the mouse click
  */
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -53,13 +53,13 @@ function runGame() {
     renderCard(card2, randomImg2);
     renderCard(card3, randomImg3);
 
-    /* jackpot score */
+    /* all items are equal = jackpot score */
     if (randomImg1 === randomImg2 && randomImg2 === randomImg3)  {
         scoreCalculatorAll();
        
     }
 
-    /*accumulate point to reach 30*/
+    /*2 items of 3 are equal = accumulate point to reach 30*/
     else if (randomImg1 === randomImg2 || randomImg1 === randomImg3) {
         scoreCalculatorSome();
         
@@ -69,7 +69,7 @@ function runGame() {
     
     }
 
-    /* reset point */
+    /* all images are different = reset score and lose game */
     else {
         scoreReset();
     
@@ -94,6 +94,7 @@ function renderCard(card, choiceIndex) {
  */
 
 function scoreCalculatorAll() {
+    playScore = ""
     results()
    }
 
@@ -120,7 +121,9 @@ function scoreReset() {
 }
 
 
-/* functions below add some icons in the DOM based on the results */
+/* functions below create HTML elements in the DOM and attach them in the 
+lose-win div section based on the results */
+
 
 function showWins() {
     loseWin.classList.remove("hidden");
@@ -131,15 +134,7 @@ function showWins() {
     // Append to another existing element:
     loseWin.appendChild(para);
     tryAgainBtn()
-    // create a try again button to restart game 
-    /*const button = document.createElement("button");
-    button.setAttribute("id", "restart-game");
-    button.innerHTML = "play again"
-    button.addEventListener("click", function() {
-        loseWin.classList.add("hidden")
-        runGame()
-    })
-    loseWin.appendChild(button)*/
+   
 
 }
 
@@ -154,16 +149,6 @@ function showTryAgain() {
     loseWin.appendChild(para);
     tryAgainBtn()
 
-    //create a  try again button to restart game
-    /*const button = document.createElement("button");
-    button.setAttribute("id", "restart-game");
-    button.innerHTML = "try again"
-    button.addEventListener("click", function() {
-        loseWin.classList.add("hidden")
-        runGame()
-    })
-
-    loseWin.appendChild(button)*/
 
 }
 
@@ -180,6 +165,7 @@ function results() {
 }
 
 
+/** this function create a button for restart the game  */
 function tryAgainBtn() {
     playScore = 0
     const button = document.createElement("button");

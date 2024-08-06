@@ -54,11 +54,11 @@ h1 {
 
 #lose-win {
  position: absolute;
-  top: 5em;
+  top: 18em;
   left: 1em;
   z-index: 99;
   width: 90vw;
-  height: 57vh;
+  height: 44vh;
   background: rgba(104, 63, 105, 0.9);
   text-align: center;
   display: flex;
