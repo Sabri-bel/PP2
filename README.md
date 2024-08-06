@@ -10,15 +10,36 @@ The "press to play" button start the game and there are 3 possible outcome:
 - All different cards, user lost any points accumulated and game stop.
 In any case, user can decide to restart the game and try again with the specific button in the banner
 
-![image from amIresponsive website]()
+![image from amIresponsive website](/assets/media/amIresponsive.png)
 
 ## Design
 The design of the website use a mix of emoticon images, violet and yellow background color. The page can adapt to the size of the screen in use for styling purposes.
 
-##Features
+## Features
+- start game button
+
+![image of the start button](/assets/media/start%20button.png)
+
+- slot machine area with a random outcome
+
+![image of the game area](/assets/media/rotating%20card%20area.png)
+
+- score area
+
+![image of the score area](/assets/media/score%20area.png)
 
 ### Specific features
-add screenshot
+
+- restart button with a personalized message
+
+![image of jackpot](/assets/media/jackpot.png)
+
+![image of lose game](/assets/media/loser.png)
+
+![image of high score](/assets/media/highscore.png)
+
+
+
 
 ### Features implemented in future
 - a scoreboard to save the number of time the user hit the Jackpot
@@ -45,7 +66,8 @@ add screenshot
 ### Browser Compatibility
 - Tested the website using the following browser: Chrome, Firefox, Edge.
 - Tested for the accessibility requirement in Lighthouse, no issue found.
-add screenshot 
+
+![lighthouse response](/assets/media/lighthouse.png)
 
 - Verified the responsivity of the screen in different screen size.
 
@@ -53,10 +75,18 @@ add screenshot
 * HTML 
 No errors were returned when passing through the official W3C validator
 
+![html validator screenshot](/assets/media/html%20validator.png)
+
 * CSS 
 No errors were returned when passing through the official validator
+![css validator screenshot](/assets/media/css%20validtor.png)
 
-* javascript testing
+
+* javascript 
+No errors were returned when passing through the official validator
+
+![javascript validator screenshot](/assets/media/jshint.png)
+
 
 ### testcase
 add the table below 
@@ -83,7 +113,7 @@ The steps to deploy are the following:
 # Credits
 
 ### Media and images
-- The backgroun image used for the backgroud downloaded from Freepik
+- The background image used for the backgroud downloaded from Freepik
 - The card images used for the spinning game were downloaded from Freepik
 - The icons in the headers are from Font Awesome
 - The fonts used are imported from Google Fonts
